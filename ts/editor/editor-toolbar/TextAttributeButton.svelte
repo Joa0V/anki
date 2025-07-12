@@ -6,7 +6,9 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     import { getPlatformString } from "@tslib/shortcuts";
     import { singleCallback } from "@tslib/typing";
     import { onMount } from "svelte";
+    import { execCommand, queryCommandState } from "$lib/domlib";
 
+    import { context as noteEditorContext } from "../NoteEditor.svelte";
     import IconButton from "$lib/components/IconButton.svelte";
     import Shortcut from "$lib/components/Shortcut.svelte";
     import WithState, { updateStateByKey } from "$lib/components/WithState.svelte";
@@ -42,9 +44,11 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     async function updateStateFromActiveInput(): Promise<boolean> {
         return disabled ? false : surrounder.isSurrounded(key);
     }
-
+    
+    const { focusedInput } = noteEditorContext.get();
     function applyAttribute(): void {
-        surrounder.surround(key, exclusiveNames);
+        $focusedInput?.focus();
+        setTimeout(() => execCommand(key), 0);
     }
 
     let disabled: boolean;

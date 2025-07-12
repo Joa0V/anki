@@ -3,6 +3,7 @@
 
 export function isApplePlatform(): boolean {
     // avoid deprecation warning
+    if(typeof window === "undefined") {return false;}
     const platform = window.navigator["platform" + ""];
     return (
         platform.startsWith("Mac")

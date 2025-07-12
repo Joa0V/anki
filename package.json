@@ -21,6 +21,7 @@
         "@sveltejs/adapter-static": "^3.0.0",
         "@sveltejs/kit": "^2.20.7",
         "@sveltejs/vite-plugin-svelte": "4.0.0",
+        "@testing-library/svelte": "^5.2.8",
         "@types/bootstrap": "^5.0.12",
         "@types/codemirror": "^5.60.0",
         "@types/d3": "^7.0.0",
@@ -44,6 +45,7 @@
         "eslint-plugin-compat": "^4.1.4",
         "eslint-plugin-import": "^2.25.4",
         "eslint-plugin-svelte": "^2",
+        "jsdom": "^26.1.0",
         "license-checker-rseidelsohn": "=4.3.0",
         "prettier": "^3.4.2",
         "prettier-plugin-svelte": "^3.3.2",
@@ -57,7 +59,7 @@
         "tsx": "^3.12.0",
         "typescript": "^5.0.4",
         "vite": "5.4.19",
-        "vitest": "^2"
+        "vitest": "^2.1.9"
     },
     "dependencies": {
         "@bufbuild/protobuf": "^1.2.1",

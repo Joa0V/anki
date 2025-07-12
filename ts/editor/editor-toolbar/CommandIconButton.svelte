@@ -26,8 +26,8 @@ License: GNU AGPL, version 3 or later; http://www.gnu.org/licenses/agpl.html
     const { focusedInput } = noteEditorContext.get();
 
     function action() {
-        execCommand(key);
         $focusedInput?.focus();
+        setTimeout(() => execCommand(key), 0);
     }
 
     $: disabled = !$focusedInput || !editingInputIsRichText($focusedInput);
